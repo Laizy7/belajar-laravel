@@ -8,9 +8,10 @@ class StudentController extends Controller
 {
     public function index()
     {
+        // Lazy load
         $student = Student::all();
 
-        // // * Query untuk join many to one
+        // // * Eager load untuk join many to one
         // $student = Student::with('class')->get();
 
         return view('student', ['studentList' => $student]);
