@@ -13,4 +13,9 @@ class Student extends Model
     protected $fillable = [
         'name', 'gender', 'nis', 'class_id',
     ];
+
+    function class ()
+    {
+        return $this->belongsTo(ClassRoom::class);
+    }
 }

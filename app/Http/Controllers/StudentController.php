@@ -2,12 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Student;
+
 class StudentController extends Controller
 {
     public function index()
     {
-        // $student = Student::all();
-        // return view('student', ['studentList' => $student]);
+        $student = Student::all();
+
+        // // * Query untuk join many to one
+        // $student = Student::with('class')->get();
+
+        return view('student', ['studentList' => $student]);
 
         // == Query Builder ==
 
@@ -97,11 +103,11 @@ class StudentController extends Controller
         $pluckData = collect($biodata)->pluck('nama')->all();
         dd($pluckData); */
 
-        $nilaiMap = [9, 4, 5, 7, 2, 8, 9, 9, 3, 1, 3, 2, 7, 4, 6, 9, 8, 3];
-
-        $hasilMap = collect($nilaiMap)->map(function ($value) {
-            return $value * 2;
-        })->all();
-        dd($hasilMap);
+        // Method map
+        /* $nilaiMap = [9, 4, 5, 7, 2, 8, 9, 9, 3, 1, 3, 2, 7, 4, 6, 9, 8, 3];
+    $hasilMap = collect($nilaiMap)->map(function ($value) {
+    return $value * 2;
+    })->all();
+    dd($hasilMap); */
     }
 }

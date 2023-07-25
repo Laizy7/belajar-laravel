@@ -11,6 +11,7 @@
         <tr>
             <th>No.</th>
             <th>Name</th>
+            <th>Students</th>
         </tr>
     </thead>
     <tbody>
@@ -18,6 +19,11 @@
         <tr>
             <td>{{$loop->iteration}}</td>
             <td>{{$c->name}}</td>
+            <td>
+                @foreach ($c->students as $student)
+                {{$student->name}} <br>
+                @endforeach
+            </td>
         </tr>
         @endforeach
     </tbody>
