@@ -12,7 +12,14 @@ class ClassController extends Controller
         // $class = ClassRoom::all();
 
         // eager load
-        $class = ClassRoom::with('students', 'homeroomTeacher')->get();
+        $class = ClassRoom::get();
         return view('classroom', ['classList' => $class]);
+    }
+
+    public function show($id)
+    {
+        $class = ClassRoom::with(['students', 'homeroomTeacher'])
+            ->findOrFail($id);
+        return view('class-detail', ['class' => $class]);
     }
 }

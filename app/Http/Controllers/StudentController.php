@@ -12,7 +12,7 @@ class StudentController extends Controller
         // $student = Student::all();
 
         // * Eager load untuk join many to one
-        $student = Student::with('class.homeroomTeacher', 'extracurriculars')->get();
+        $student = Student::get();
 
         return view('student', ['studentList' => $student]);
 
@@ -110,5 +110,12 @@ class StudentController extends Controller
     return $value * 2;
     })->all();
     dd($hasilMap); */
+    }
+
+    public function show($id)
+    {
+        $student = Student::with(['class.homeroomTeacher', 'extracurriculars'])
+            ->findOrFail($id);
+        return view('student-detail', ['student' => $student]);
     }
 }

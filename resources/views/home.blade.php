@@ -4,6 +4,7 @@
 
 @section('content')
 <h1>This is {{$name}}'s Home as {{$role}}!</h1>
+@endsection
 
 {{-- @if ($role == 'admin')
 <a href="">Ke halaman Admin</a>
@@ -25,17 +26,3 @@
 @default
 <a href="">Ke halaman Lain</a>
 @endswitch --}}
-
-<table class="table">
-  <tr>
-    <th>No</th>
-    <th>Nama</th>
-  </tr>
-  @foreach ($buah as $b)
-  <tr>
-    <td>{{$loop->iteration}}</td>
-    <td>{{$b}}</td>
-  </tr>
-  @endforeach
-</table>
-@endsection

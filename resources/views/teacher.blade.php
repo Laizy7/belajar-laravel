@@ -11,6 +11,7 @@
         <tr>
             <th>#</th>
             <th>Name</th>
+            <th>Action</th>
         </tr>
     </thead>
 
@@ -19,6 +20,7 @@
         <tr>
             <td>{{$loop->iteration}}</td>
             <td>{{$teach->name}}</td>
+            <td><a href="/teachers/{{$teach->id}}">Detail</a></td>
         </tr>
         @endforeach
     </tbody>

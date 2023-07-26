@@ -11,7 +11,8 @@
         <tr>
             <th>No.</th>
             <th>Name</th>
-            <th>Anggota</th>
+            <th>Action</th>
+            {{-- <th>Anggota</th> --}}
         </tr>
     </thead>
     <tbody>
@@ -19,11 +20,12 @@
         <tr>
             <td>{{$loop->iteration}}</td>
             <td>{{$data->name}}</td>
-            <td>
+            <td><a href="/extracurricular/{{$data->id}}">Detail</a></td>
+            {{-- <td>
                 @foreach ($data->students as $item)
                 {{$item->name}} <br>
                 @endforeach</td>
-            </td>
+            </td> --}}
         </tr>
         @endforeach
     </tbody>

@@ -13,9 +13,10 @@
             <th>Name</th>
             <th>Gender</th>
             <th>NIS</th>
-            <th>Class</th>
+            <th>Action</th>
+            {{-- <th>Class</th>
             <th>Excul</th>
-            <th>Homeroom Teacher</th>
+            <th>Homeroom Teacher</th> --}}
         </tr>
     </thead>
 
@@ -26,13 +27,14 @@
             <td>{{$student->name}}</td>
             <td>{{$student->gender}}</td>
             <td>{{$student->nis}}</td>
-            <td>{{$student->class['name']}}</td>
+            <td><a href="/students/{{$student->id}}">Detail</a></td>
+            {{-- <td>{{$student->class['name']}}</td>
             <td>
                 @foreach ($student->extracurriculars as $excul)
                 {{$excul->name}} <br>
                 @endforeach
             </td>
-            <td>{{$student->class->homeroomTeacher['name']}}</td>
+            <td>{{$student->class->homeroomTeacher['name']}}</td> --}}
         </tr>
         @endforeach
     </tbody>

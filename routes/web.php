@@ -26,6 +26,13 @@ Route::get('/', function () {
 });
 
 Route::get('/students', [StudentController::class, 'index']);
+Route::get('/students/{id}', [StudentController::class, 'show']);
+
 Route::get('/class', [ClassController::class, 'index']);
+Route::get('/class/{id}', [ClassController::class, 'show']);
+
 Route::get('/extracurricular', [ExtracurricularController::class, 'index']);
+Route::get('/extracurricular/{id}', [ExtracurricularController::class, 'show']);
+
 Route::get('/teachers', [TeacherController::class, 'index']);
+Route::get('/teachers/{id}', [TeacherController::class, 'show']);
