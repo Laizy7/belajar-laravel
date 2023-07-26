@@ -12,7 +12,7 @@ class StudentController extends Controller
         // $student = Student::all();
 
         // * Eager load untuk join many to one
-        $student = Student::with('class', 'extracurriculars')->get();
+        $student = Student::with('class.homeroomTeacher', 'extracurriculars')->get();
 
         return view('student', ['studentList' => $student]);
 

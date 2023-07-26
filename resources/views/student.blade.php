@@ -15,21 +15,24 @@
             <th>NIS</th>
             <th>Class</th>
             <th>Excul</th>
+            <th>Homeroom Teacher</th>
         </tr>
     </thead>
 
     <tbody>
-        @foreach ($studentList as $s)
+        @foreach ($studentList as $student)
         <tr>
             <td>{{$loop->iteration}}</td>
-            <td>{{$s->name}}</td>
-            <td>{{$s->gender}}</td>
-            <td>{{$s->nis}}</td>
-            <td>{{$s->class['name']}}</td>
+            <td>{{$student->name}}</td>
+            <td>{{$student->gender}}</td>
+            <td>{{$student->nis}}</td>
+            <td>{{$student->class['name']}}</td>
             <td>
-                @foreach ($s->extracurriculars as $excul)
+                @foreach ($student->extracurriculars as $excul)
                 {{$excul->name}} <br>
-                @endforeach</td>
+                @endforeach
+            </td>
+            <td>{{$student->class->homeroomTeacher['name']}}</td>
         </tr>
         @endforeach
     </tbody>
