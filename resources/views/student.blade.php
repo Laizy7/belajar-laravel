@@ -32,7 +32,10 @@
             <td>{{$student->name}}</td>
             <td>{{$student->gender}}</td>
             <td>{{$student->nis}}</td>
-            <td><a href="/students/{{$student->id}}">Detail</a></td>
+            <td>
+                <a href="/students/{{$student->id}}">Detail</a>
+                <a href="/students-edit/{{$student->id}}">Edit</a>
+            </td>
             {{-- <td>{{$student->class['name']}}</td>
             <td>
                 @foreach ($student->extracurriculars as $excul)
