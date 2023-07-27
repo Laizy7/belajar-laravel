@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StudentCreateRequest;
 use App\Models\ClassRoom;
 use App\Models\Student;
 use Illuminate\Http\Request;
@@ -128,8 +129,12 @@ class StudentController extends Controller
         return view('student-add', ['class' => $class]);
     }
 
-    public function store(Request $request)
+    public function store(StudentCreateRequest $request)
     {
+        // $validated = $request->validate([
+        //     'nis' => 'unique:students|max:4',
+        // ]);
+
         // $student = new Student;
         // $student->name = $request->name;
         // $student->gender = $request->gender;
