@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ClassRoom;
 use App\Models\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class StudentController extends Controller
 {
@@ -138,6 +139,12 @@ class StudentController extends Controller
 
         // Mass Assignment
         $student = Student::create($request->all());
+
+        if ($student) {
+            Session::flash('status', 'success');
+            Session::flash('message', 'Add new student success!');
+        }
+
         return redirect('/students');
     }
 
