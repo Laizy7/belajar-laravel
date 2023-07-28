@@ -16,7 +16,7 @@ class StudentController extends Controller
         // $student = Student::all();
 
         // * Eager load untuk join many to one
-        $student = Student::get();
+        $student = Student::paginate(15);
 
         return view('student', ['studentList' => $student]);
 
