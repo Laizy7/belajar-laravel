@@ -31,6 +31,8 @@ Route::get('/students-add', [StudentController::class, 'create']);
 Route::post('/student', [StudentController::class, 'store']);
 Route::get('/students-edit/{id}', [StudentController::class, 'edit']);
 Route::put('/student/{id}', [StudentController::class, 'update']);
+Route::get('/students-delete/{id}', [StudentController::class, 'delete']);
+Route::delete('/students-destroy/{id}', [StudentController::class, 'destroy']);
 
 Route::get('/class', [ClassController::class, 'index']);
 Route::get('/class/{id}', [ClassController::class, 'show']);

@@ -39,6 +39,7 @@
             <td>
                 <a href="/students/{{$student->id}}">Detail</a>
                 <a href="/students-edit/{{$student->id}}">Edit</a>
+                <a href="/students-delete/{{$student->id}}">Delete</a>
             </td>
             {{-- <td>{{$student->class['name']}}</td>
             <td>
