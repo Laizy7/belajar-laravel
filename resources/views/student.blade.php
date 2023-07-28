@@ -5,8 +5,9 @@
 @section('content')
 <h1>Ini halaman Student</h1>
 
-<div class="my-5">
+<div class="my-5 d-flex justify-content-between">
     <a href="students-add" class="btn btn-primary">Add Data</a>
+    <a href="students-deleted" class="btn btn-info">Show Deleted Data</a>
 </div>
 
 @if(Session::has('status'))
