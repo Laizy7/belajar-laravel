@@ -10,14 +10,20 @@ use Illuminate\Support\Facades\Session;
 
 class StudentController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        $keyword = $request->keyword;
         // // Lazy load
         // $student = Student::all();
 
         // * Eager load untuk join many to one
-        $student = Student::paginate(15);
-
+        $student = Student::where('name', 'LIKE', '%' . $keyword . '%')
+            ->orWhere('gender', $keyword)
+            ->orWhere('nis', 'LIKE', '%' . $keyword . '%')
+            ->orWhereHas('class', function ($query) use ($keyword) {
+                $query->where('name', 'LIKE', '%' . $keyword . '%');
+            })
+            ->paginate(15);
         return view('student', ['studentList' => $student]);
 
         // == Query Builder ==

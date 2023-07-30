@@ -16,6 +16,15 @@
 
 <h3>Student List</h3>
 
+<div class="my-3 col-6">
+    <form action="" method="get">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" name="keyword" placeholder="Find...">
+            <button class="btn btn-primary input-group-text">Search</button>
+        </div>
+    </form>
+</div>
+
 <table class="table">
     <thead>
         <tr>
@@ -23,6 +32,7 @@
             <th>Name</th>
             <th>Gender</th>
             <th>NIS</th>
+            <th>Class</th>
             <th>Action</th>
             {{-- <th>Class</th>
             <th>Excul</th>
@@ -37,6 +47,7 @@
             <td>{{$student->name}}</td>
             <td>{{$student->gender}}</td>
             <td>{{$student->nis}}</td>
+            <td>{{$student->class['name']}}</td>
             <td>
                 <a href="/students/{{$student->id}}">Detail</a>
                 <a href="/students-edit/{{$student->id}}">Edit</a>
@@ -55,7 +66,7 @@
 </table>
 
 <div class="my-5">
-    {{$studentList->links()}}
+    {{$studentList->withQueryString()->links()}}
 </div>
 
 @endsection
