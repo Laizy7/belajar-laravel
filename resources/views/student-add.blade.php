@@ -14,7 +14,7 @@
     </div>
     @endif
 
-    <form action="student" method="post">
+    <form action="student" method="post" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
             <label for="name">Name</label>
@@ -34,12 +34,19 @@
         </div>
         <div class="mb-3">
             <label for="class">Class</label>
-            <select name="class_id" id="class" class="form-control">
+            <select name="class_id" id="class_id" class="form-control">
                 <option value="">Select One</option>
                 @foreach ($class as $item)
                 <option value="{{$item->id}}">{{$item->name}}</option>
                 @endforeach
             </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="image">Image</label>
+            <div class="input-group">
+                <input type="file" class="form-control" id="image" name="image">
+            </div>
         </div>
 
         <div class="mb-3">

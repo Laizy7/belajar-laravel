@@ -137,6 +137,16 @@ class StudentController extends Controller
 
     public function store(StudentCreateRequest $request)
     {
+        $newName = '';
+
+        if ($request->file('image')) {
+            $extension = $request->file('image')->getClientOriginalExtension();
+            $newName = $request->name . '-' . now()->timestamp . '.' . $extension;
+            $request->file('image')->storeAs('image', $newName);
+        }
+
+        $request['image'] = $newName;
+
         // $validated = $request->validate([
         //     'nis' => 'unique:students|max:4',
         // ]);

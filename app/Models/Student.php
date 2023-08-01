@@ -12,7 +12,7 @@ class Student extends Model
 
     // jika create data menggunakan Eloquent
     protected $fillable = [
-        'name', 'gender', 'nis', 'class_id',
+        'name', 'gender', 'nis', 'class_id', 'image',
     ];
 
     function class ()

@@ -23,18 +23,17 @@
     </thead>
     <tbody>
         @foreach ($classList as $data)
-        <>
-            <td>{{$loop->iteration}}</td>
-            <td>{{$data->name}}</td>
-            <td><a href="/class/{{$data->id}}">Detail</a></td>
-            {{-- <td>
-                @foreach ($data->students as $student)
-                {{$student->name}} <br>
-                @endforeach
-            </td>
-            <td>{{$data->homeroomTeacher['name']}}</td> --}}
-            </tr>
+        <td>{{$loop->iteration}}</td>
+        <td>{{$data->name}}</td>
+        <td><a href="/class/{{$data->id}}">Detail</a></td>
+        {{-- <td>
+            @foreach ($data->students as $student)
+            {{$student->name}} <br>
             @endforeach
+        </td>
+        <td>{{$data->homeroomTeacher['name']}}</td> --}}
+        </tr>
+        @endforeach
     </tbody>
 </table>
 
