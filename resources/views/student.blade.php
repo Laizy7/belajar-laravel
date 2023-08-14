@@ -49,9 +49,16 @@
             <td>{{$student->nis}}</td>
             <td>{{$student->class['name']}}</td>
             <td>
+                @if (Auth::user()->role_id == 3)
+                -
+                @else
                 <a href="/students/{{$student->id}}">Detail</a>
                 <a href="/students-edit/{{$student->id}}">Edit</a>
+                @endif
+
+                @if (Auth::user()->role_id == 1)
                 <a href="/students-delete/{{$student->id}}">Delete</a>
+                @endif
             </td>
             {{-- <td>{{$student->class['name']}}</td>
             <td>

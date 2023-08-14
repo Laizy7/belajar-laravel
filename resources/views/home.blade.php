@@ -3,7 +3,8 @@
 @section('title', 'Home')
 
 @section('content')
-<h1>This is {{$name}}'s Home as {{$role}}!</h1>
+<h1>This is {{Auth::user()->name}}'s Home as {{Auth::user()->role['name']}}!</h1>
+
 @endsection
 
 {{-- @if ($role == 'admin')

@@ -35,6 +35,11 @@
                         <a class="nav-link" href="/teachers">Teachers</a>
                     </li>
                 </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
